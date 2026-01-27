@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Roboto', Arial, sans-serif;
-      background: #93ebc3;
+      background: url('./images/dabeijing.png') center/cover no-repeat fixed;
       color: #082b1b;
       min-height: 100vh;
       display: flex;
@@ -22,7 +22,8 @@
       max-width: 420px;
       width: 100%;
       text-align: center;
-      background: rgba(255,255,255,0.9);
+      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)),
+                  url('./images/container1.png') center/cover no-repeat;
       border-radius: 24px;
       padding: 20px 15px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
@@ -33,13 +34,13 @@
     .avatar img {
       width: 80px;
       height: 80px;
-      border-radius: 50%;
-      border: 3px solid #22c37a;
+      object-fit: contain;          /* 完整显示图片，不裁剪、不变形 */
+      background: transparent;
     }
     .title {
       font-size: 24px;
       font-weight: 700;
-      color: #000;
+      color: #fff;
       margin: 8px 0;
     }
     .bio {
@@ -53,23 +54,56 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 12px 10px;
     }
+
     .link-btn {
       display: flex;
       align-items: center;
       padding: 12px 14px;
       border-radius: 24px;
       text-decoration: none;
-      color: #000;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      transition: all 0.2s ease;
+      color: #fff;
       font-size: 16px;
       width: 100%;
       box-sizing: border-box;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
     }
+
     .link-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
     }
+
+    /* 选项3：默认最亮，hover 变化最大 */
+    .link-btn {
+      background-image: 
+        linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.45)),
+        var(--bg-img);
+      background-blend-mode: multiply;
+    }
+
+    .link-btn:hover {
+      background-image: 
+        linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.30)),
+        var(--bg-img);
+      background-blend-mode: multiply;
+    }
+
+    /* 背景图变量 */
+    .link-btn:nth-child(1) { --bg-img: url('./images/bb1.png'); }
+    .link-btn:nth-child(2) { --bg-img: url('./images/bb2.png'); }
+    .link-btn:nth-child(3) { --bg-img: url('./images/bb3.png'); }
+    .link-btn:nth-child(4) { --bg-img: url('./images/bb4.png'); }
+    .link-btn:nth-child(5) { --bg-img: url('./images/bb5.png'); }
+    .link-btn:nth-child(6) { --bg-img: url('./images/bb6.png'); }
+    .link-btn:nth-child(7) { --bg-img: url('./images/bb7.png'); }
+    .link-btn:nth-child(8) { --bg-img: url('./images/bb8.png'); }
+    .link-btn:nth-child(9) { --bg-img: url('./images/bb9.png'); }
+
     .link-thumb {
       width: 48px;
       height: 48px;
@@ -77,27 +111,35 @@
       margin-right: 10px;
       background-size: cover;
       flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
+
     .link-text {
       flex: 1;
       text-align: left;
     }
+
     .link-title {
       font-size: 15px;
       font-weight: 700;
       line-height: 1.3;
     }
+
     .link-subtitle {
       font-size: 12px;
       font-weight: 700;
-      color: #444;
+      color: #ddd;
       margin-top: 2px;
     }
 
     @media (max-width: 480px) {
       body { padding: 10px; }
       .container { padding: 15px 12px; border-radius: 16px; }
-      .avatar img { width: 70px; height: 70px; border-width: 2px; }
+      .avatar img { 
+        width: 70px; 
+        height: 70px; 
+        object-fit: contain;
+      }
       .title { font-size: 20px; margin: 6px 0; }
       .bio { font-size: 13px; margin-bottom: 15px; }
       .links { 
@@ -118,14 +160,14 @@
 <body>
   <div class="container">
     <div class="avatar">
-      <img src="https://taplink.st/a/6/8/b/7/d69aeb.png?2" alt="cc668专业导航">
+      <img src="./images/touxiang.png" alt="CC668专业导航">
     </div>
-    <div class="title">cc668专业导航</div>
+    <div class="title">CC668专业导航</div>
     <div class="bio">永久易记网址：cc668.vip</div>
 
     <div class="links">
 
-      <a href="https://www.mk2144.com:9153/entry/register66375/?i_code=92820700" target="_blank" class="link-btn" style="background:#e3f2fd; border:2px solid #868e96;">
+      <a href="https://www.mk2144.com:9153/entry/register66375/?i_code=92820700" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb1.png')"></div>
         <div class="link-text">
           <div class="link-title">MK体育手机版</div>
@@ -133,7 +175,7 @@
         </div>
       </a>
 
-      <a href="https://www.mk2013.com:9061/register66375/?i_code=92820700" target="_blank" class="link-btn" style="background:#e3f2fd; border:2px solid #868e96;">
+      <a href="https://www.mk2013.com:9061/register66375/?i_code=92820700" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb2.png')"></div>
         <div class="link-text">
           <div class="link-title">MK体育电脑版</div>
@@ -141,39 +183,39 @@
         </div>
       </a>
 
-      <a href="https://www.10999.vip/?a=95355" target="_blank" class="link-btn" style="background:#bac8ff; border:2px solid #fcc419;">
+      <a href="https://www.10999.vip/?a=95355" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb3.png')"></div>
         <div class="link-text">
           <div class="link-title">彩娱乐 线路1</div>
-          <div class="link-subtitle">注册邀请码：95355</div>
+          <div class="link-subtitle">注册码：95355</div>
         </div>
       </a>
 
-      <a href="https://www.14678.vip/?a=95355" target="_blank" class="link-btn" style="background:#bac8ff; border:2px solid #fcc419;">
+      <a href="https://www.14678.vip/?a=95355" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb4.png')"></div>
         <div class="link-text">
           <div class="link-title">彩娱乐 线路2</div>
-          <div class="link-subtitle">注册邀请码：95355</div>
+          <div class="link-subtitle">注册码：95355</div>
         </div>
       </a>
 
-      <a href="https://www.04789.vip/?a=95355" target="_blank" class="link-btn" style="background:#bac8ff; border:2px solid #fcc419;">
+      <a href="https://www.04789.vip/?a=95355" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb5.png')"></div>
         <div class="link-text">
           <div class="link-title">彩娱乐 线路3</div>
-          <div class="link-subtitle">注册邀请码：95355</div>
+          <div class="link-subtitle">注册码：95355</div>
         </div>
       </a>
 
-      <a href="https://yy.04999.vip/?a=95355" target="_blank" class="link-btn" style="background:#bac8ff; border:2px solid #fcc419;">
+      <a href="https://yy.04999.vip/?a=95355" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb6.png')"></div>
         <div class="link-text">
           <div class="link-title">彩娱乐 线路4</div>
-          <div class="link-subtitle">注册邀请码：95355</div>
+          <div class="link-subtitle">注册码：95355</div>
         </div>
       </a>
 
-      <a href="http://t.me/yuanni1688" target="_blank" class="link-btn" style="background:#ffd43b; border:2px solid #868e96;">
+      <a href="http://t.me/yuanni1688" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb7.png')"></div>
         <div class="link-text">
           <div class="link-title">皇冠信用开户</div>
@@ -181,7 +223,7 @@
         </div>
       </a>
 
-      <a href="https://t.me/yuanni1688" target="_blank" class="link-btn" style="background:#f1f3f5; border:2px solid #f03e3e;">
+      <a href="https://t.me/yuanni1688" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb8.png')"></div>
         <div class="link-text">
           <div class="link-title">TG在线客服</div>
@@ -189,11 +231,11 @@
         </div>
       </a>
 
-      <a href="https://www.letsvpn.world" target="_blank" class="link-btn" style="background:#f1f3f5; border:2px solid #f03e3e;">
+      <a href="https://www.letsvpn.world" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb9.png')"></div>
         <div class="link-text">
           <div class="link-title">快连VPN</div>
-          <div class="link-subtitle">最稳定的VPN</div>
+          <div class="link-subtitle">永远能连上的VPN</div>
         </div>
       </a>
 
