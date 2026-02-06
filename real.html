@@ -78,7 +78,6 @@
       box-shadow: 0 12px 24px rgba(0,0,0,0.3);
     }
 
-    /* 选项3：默认最亮，hover 变化最大 */
     .link-btn {
       background-image: 
         linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.45)),
@@ -94,16 +93,16 @@
     }
 
     /* 背景图变量 */
-    .link-btn:nth-child(1) { --bg-img: url('./images/bb1.png'); }
-    .link-btn:nth-child(2) { --bg-img: url('./images/bb2.png'); }
-    .link-btn:nth-child(3) { --bg-img: url('./images/bb3.png'); }
-    .link-btn:nth-child(4) { --bg-img: url('./images/bb4.png'); }
-    .link-btn:nth-child(5) { --bg-img: url('./images/bb5.png'); }
-    .link-btn:nth-child(6) { --bg-img: url('./images/bb6.png'); }
-    .link-btn:nth-child(7) { --bg-img: url('./images/bb7.png'); }
-    .link-btn:nth-child(8) { --bg-img: url('./images/bb8.png'); }
-    .link-btn:nth-child(9) { --bg-img: url('./images/bb9.png'); }
-    .link-btn:nth-child(10) { --bg-img: url('./images/bb10.png'); }
+    .link-btn:nth-of-type(1) { --bg-img: url('./images/bb1.png'); }
+    .link-btn:nth-of-type(2) { --bg-img: url('./images/bb2.png'); }
+    .link-btn:nth-of-type(3) { --bg-img: url('./images/bb3.png'); }
+    .link-btn:nth-of-type(4) { --bg-img: url('./images/bb4.png'); }
+    .link-btn:nth-of-type(5) { --bg-img: url('./images/bb5.png'); }
+    .link-btn:nth-of-type(6) { --bg-img: url('./images/bb6.png'); }
+    .link-btn:nth-of-type(7) { --bg-img: url('./images/bb7.png'); }
+    .link-btn:nth-of-type(8) { --bg-img: url('./images/bb8.png'); }
+    .link-btn:nth-of-type(9) { --bg-img: url('./images/bb9.png'); }
+    .link-btn:nth-of-type(10) { --bg-img: url('./images/bb10.png'); }
 
     .link-thumb {
       width: 48px;
@@ -133,6 +132,26 @@
       margin-top: 2px;
     }
 
+    /* 分组标题 - 只缩小与按钮间距，分隔符自身大小不变 */
+    .group-header {
+      grid-column: 1 / -1;
+      margin: 0 0 4px 0;            /* 上方0px（贴近上一按钮），下方4px */
+      padding: 4px 0;               /* 保持原高度不变 */
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      background: linear-gradient(90deg, 
+        rgba(255,255,255,0.08) 0%, 
+        rgba(255,255,255,0.18) 50%, 
+        rgba(255,255,255,0.08) 100%);
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+
     @media (max-width: 480px) {
       body { padding: 10px; }
       .container { padding: 15px 12px; border-radius: 16px; }
@@ -154,6 +173,11 @@
       .link-thumb { width: 40px; height: 40px; margin-right: 8px; }
       .link-title { font-size: 14px; }
       .link-subtitle { font-size: 11px; }
+      .group-header {
+        font-size: 14px;
+        margin: 0 0 4px 0;         /* 手机端同样贴近上方 */
+        padding: 4px 0;            /* 保持高度不变 */
+      }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -167,6 +191,8 @@
     <div class="bio">永久易记网址：cc668.vip</div>
 
     <div class="links">
+
+      <div class="group-header">体育投注平台 - 世界杯必备</div>
 
       <a href="https://www.mk2144.com:9153/entry/register66375/?i_code=92820700" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb1.png')"></div>
@@ -183,6 +209,8 @@
           <div class="link-subtitle">顶级体育博彩平台</div>
         </div>
       </a>
+
+      <div class="group-header">彩票购买平台 - 简单易上手</div>
 
       <a href="https://www.10999.vip/?a=95355" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb3.png')"></div>
@@ -215,6 +243,8 @@
           <div class="link-subtitle">注册码：95355</div>
         </div>
       </a>
+
+      <div class="group-header">彩金领取 - 客服 - 工具</div>
 
       <a href="https://t.me/yuanni1688" target="_blank" class="link-btn">
         <div class="link-thumb" style="background-image:url('./images/thumb7.png')"></div>
